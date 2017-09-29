@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aeapp.SettingsPage"
+             Title="Settings">
+
+                
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Margin="0, 20, 0, 0" Text="Pause ON/OFF" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Switch Margin="10" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
+            <Picker Margin="10" Title="How long in minutes:" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                        <x:String>25</x:String>
+                        <x:String>30</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

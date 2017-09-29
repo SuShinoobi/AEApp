@@ -5,12 +5,12 @@ namespace aeapp
 {
     public class Timer
     {
-        private int TotalTime = 20;
+        public ITimer AppPage;
+        public bool countdownRunning;
         private int currentTime;
         private double minutes;
         private double seconds;
-        public bool countdownRunning = false;
-        public ITimer AppPage;
+        private int TotalTime = 20;
 
         public Timer(ITimer appPage)
         {

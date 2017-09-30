@@ -6,6 +6,6 @@ namespace aeapp
 {
     public interface ITimer
     {
-        void Update(double min, double sec);
+        void Update(string timerValue);
     }
 }

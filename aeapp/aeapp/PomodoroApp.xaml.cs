@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.App;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,31 +8,42 @@ namespace aeapp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PomodoroApp : ContentPage, ITimer
     {
-        public Timer Timer;
+        public NewTimer Timer;
         
+
         public PomodoroApp()
         {
-            Timer = new Timer(this);
             InitializeComponent();
-            Button.Text = "Turn On";
-            Timer.Counter();
+            Timer = new NewTimer(this);
         }
 
-        public void OnButtonClicked(object sender, EventArgs args)
+        public void OnButtonClickedFlip(object sender, EventArgs args)
         {
             Button.Text = Button.Text == "Turn On" ? "Turn OFF" : "Turn On";
             Timer.Flip();
         }
 
-        public void Update(double min, double sec)
+        public void OnButtonClickedReset(object sender, EventArgs args)
         {
-            ValueText.Text = min + "m " + sec + "s";
-            if (min <= 0 && sec <= 0) TimerFinished();
+            Timer.Reset();
         }
 
-        private void TimerFinished()
+        public void Update(string timerValue)
         {
-            DisplayAlert("Alert", "You have been alerted", "OK");
+            ValueText.Text = timerValue;
         }
+
+        /* TO DO:
+        void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                Timer.Change((string)picker.ItemsSource[selectedIndex]);
+            }
+        }
+        */
     }
 }

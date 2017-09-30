@@ -12,7 +12,6 @@ namespace aeapp
         public MainPage()
         {
             InitializeComponent();
-            SettingsPage.Timer = PomodoroApp.Timer;
         }
     }
 }

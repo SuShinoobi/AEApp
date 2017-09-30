@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NewTimer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PomodoroApp.xaml.cs">
       <DependentUpon>PomodoroApp.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -24,7 +25,6 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
